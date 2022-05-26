@@ -1,5 +1,4 @@
 import unittest
-import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -17,9 +16,7 @@ class ContactUs(unittest.TestCase):
         self.chrome.get('http://automationpractice.com/index.php')
         self.chrome.implicitly_wait(30)
         self.chrome.find_element(*self.CONTACT_US).click()
-
-    def tearDown(self):
-        self.chrome.quit()
+        self.chrome.maximize_window()
 
     def test_url(self):
         actual = self.chrome.current_url
@@ -30,3 +27,6 @@ class ContactUs(unittest.TestCase):
         actual = self.chrome.title
         expected = 'CUSTOMER SERVICE - CONTACT US'
         self.assertEqual(expected, actual, 'Page title is incorrect')
+
+    def tearDown(self):
+        self.chrome.quit()

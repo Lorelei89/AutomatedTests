@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ContactUs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="text-capitalize">ContactUs</h2>
+                <p class='attribute'><strong>Start Time: </strong>2022-05-26 19:07:51</p>
+                <p class='attribute'><strong>Duration: </strong>36.94 s</p>
+                <p class='attribute'><strong>Summary: </strong>Total: 2, Pass: 1, Fail: 1</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10">
+                <table class='table table-hover table-responsive'>
+                    <thead>
+                        <tr>
+                            <th>Tests.ContactUs.ContactUs</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class='danger'>
+                            <td class="col-xs-10">test_page_title</td>
+                            <td class="col-xs-1">
+                                <span class="label label-danger" style="display:block;width:40px;">Fail</span>
+                            </td>
+                            <td class="col-xs-1">
+                                <button class="btn btn-default btn-xs">View</button>
+                            </td>
+                        </tr>
+                        <tr style="display:none;">
+                            <td class="col-xs-9" colspan="3"><p style="color:maroon;">AssertionError: 'CUSTOMER SERVICE - CONTACT US' != 'Contact us - My Store'
+- CUSTOMER SERVICE - CONTACT US
++ Contact us - My Store
+ : Page title is incorrect</p><p style="color:maroon;">Traceback (most recent call last):
+  File "C:\Users\Maria\PycharmProjects\AutomatedTests\Tests\ContactUs.py", line 28, in test_page_title
+    self.assertEqual(expected, actual, 'Page title is incorrect')
+  File "C:\Program Files\JetBrains\PyCharm Community Edition 2021.3.1\plugins\python-ce\helpers\pycharm\teamcity\diff_tools.py", line 33, in _patched_equals
+    old(self, first, second, msg)
+AssertionError: 'CUSTOMER SERVICE - CONTACT US' != 'Contact us - My Store'
+- CUSTOMER SERVICE - CONTACT US
++ Contact us - My Store
+ : Page title is incorrect
+
+
+====== WebDriver manager ======
+Could not get version for google-chrome with the command:  powershell "$ErrorActionPreference='silentlycontinue' ; (Get-Item -Path "$env:PROGRAMFILES\Google\Chrome\Application\chrome.exe").VersionInfo.FileVersion ; if (-not $? -or $? -match $error) { (Get-Item -Path "$env:PROGRAMFILES(x86)\Google\Chrome\Application\chrome.exe").VersionInfo.FileVersion } if (-not $? -or $? -match $error) { (Get-Item -Path "$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe").VersionInfo.FileVersion } if (-not $? -or $? -match $error) { reg query "HKCU\SOFTWARE\Google\Chrome\BLBeacon" /v version } if (-not $? -or $? -match $error) { reg query "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Google Chrome" /v version }"
+Current google-chrome version is UNKNOWN
+Get LATEST chromedriver version for UNKNOWN google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/102.0.5005.61/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\Maria\.wdm\drivers\chromedriver\win32\102.0.5005.61]
+</p>
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_url</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                Total: 2, Pass: 1, Fail: 1 -- Duration: 36.94 s
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('td').on('click', '.btn', function(e){
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                var $this = $(this);
+                var $nextRow = $this.closest('tr').next('tr');
+                $nextRow.slideToggle("fast");
+                $this.text(function(i, text){
+                    if (text === 'View') {
+                        return 'Hide';
+                    } else {
+                        return 'View';
+                    };
+                });
+            });
+        });
+    </script>
+</body>
+</html
