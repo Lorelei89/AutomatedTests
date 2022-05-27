@@ -11,7 +11,7 @@ class SignIn(unittest.TestCase):
     FORGOT_PASS = (By.XPATH, '//*[@id="login_form"]/div/p[1]/a')
     RETRIEVE_PASS = (By.XPATH, '//*[@id="form_forgotpassword"]/fieldset/p/button')
     ERROR_MESSAGE = (By.XPATH, '//*[@id="center_column"]/div/div/ol')
-    EMAIL_ADDRESS = (By.XPATH, '//*[@id="form_forgotpassword"]/fieldset/div')
+    EMAIL_ADDRESS = (By.ID, 'email')
 
     def setUp(self):
         s = Service(ChromeDriverManager().install())
@@ -28,21 +28,13 @@ class SignIn(unittest.TestCase):
         self.chrome.find_element(*self.FORGOT_PASS).click()
         self.chrome.find_element(*self.RETRIEVE_PASS).click()
         error_message = self.chrome.find_element(*self.ERROR_MESSAGE).text
-        if "Invalid email" in error_message:
-            print("Passed!", error_message)
-        else:
-            print("Test failed!")
+        self.assertTrue = "Invalid email" in error_message
+        print("Passed!", error_message)
 
-    def test_forgot_pass_entered_invalid_email(self):
+    def test_forgot_pass_invalid_email(self):
         self.chrome.find_element(*self.FORGOT_PASS).click()
-        email_address = self.chrome.find_element(*self.EMAIL_ADDRESS)
-        email_address.click()
-        email_address.send_keys('george@george.com')
-        email_address.submit()
-        error_message = self.chrome.find_element(*self.ERROR_MESSAGE).text
-        if "no account registered" in error_message:
-            print("Passed!The error message is: ", error_message)
-        else:
-            print('Test failed!')
-
-
+        self.chrome.find_element(*self.EMAIL_ADDRESS).send_keys('george@yahoo.com')
+        self.chrome.find_element(*self.RETRIEVE_PASS).click()
+        error_message2 = self.chrome.find_element(*self.ERROR_MESSAGE).text
+        self.assertTrue = "no account registered" in error_message2
+        print("Passed!The error message is: ", error_message2)
