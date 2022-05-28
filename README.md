@@ -1,12 +1,14 @@
 Automated tests for: http://automationpractice.com/index.php
 
-Technologies used:
+	:smile:	😁	:grin:	top
+top	
+1. Technologies used:
 * Selenium Webdriver
 * Python
 * Unittest framework 
 
-Section tested:
+2. Section tested:
 * Contact Us 
 * Sign In
 
-Reports: 
+3. HTML Reports in 'reports' folder  
