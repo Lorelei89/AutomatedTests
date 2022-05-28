@@ -12,3 +12,9 @@ Automated tests for: http://automationpractice.com/index.php
 * Sign In
 
 3. HTML Reports in 'reports' folder  
+
+4. Steps to download the repository:
+* Navigate to the to level of the project;
+* Click on the blue ‘Code’ button;
+* Choose either ‘Open with Github Desktop’ if you have installed ‘Github Desktop’ on your computer or ‘Dowload ZIP’ to download as ZIP document
+* Make sure you use PyCharm with this repository
