@@ -1,4 +1,4 @@
-Automated tests for the following website: http://automationpractice.com/index.php
+Automated tests for: http://automationpractice.com/index.php
 
 Technologies used:
 * Selenium Webdriver
