@@ -1,7 +1,6 @@
-Automated tests for: http://automationpractice.com/index.php
+#Tests with Python, Selenium Webdriver, Unittest
 
-	:smile:	😁	:grin:	top
-top	
+Automated tests for: http://automationpractice.com/index.php
 1. Technologies used:
 * Selenium Webdriver
 * Python
