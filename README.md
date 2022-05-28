@@ -5,6 +5,7 @@ Automated tests for: http://automationpractice.com/index.php
 * Selenium Webdriver
 * Python
 * Unittest framework 
+* PyCharm
 
 2. Section tested:
 * Contact Us 
