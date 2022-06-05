@@ -6,14 +6,15 @@
 * Unittest framework 
 * PyCharm
 
-⏩ Section tested:
+⏩ Sections tested:
 * Contact Us 
 * Sign In
 
 ⏬
 **HTML Reports** in _reports_ folder  
-* SingIn Browser Report 
-![sing in report](https://user-images.githubusercontent.com/70057309/172045504-200d53ed-8cba-4290-9d29-4a0c0987f91b.JPG)
+* _Sing in Browser Report_ 
+![sing in report](https://user-images.githubusercontent.com/70057309/172045626-18ed2786-f67d-43a7-8eb5-313ef6fcf693.JPG)
+
 
 
 ⏬ 
