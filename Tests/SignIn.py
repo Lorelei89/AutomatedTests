@@ -42,6 +42,27 @@ class SignIn(unittest.TestCase):
     def tearDown(self):
         self.chrome.quit()
 
+    def test_valid_credentials(self):
+        self.chrome.find_element(*self.EMAIL_ADDRESS_REGISTER).send_keys('darkstar_mary@yahoo.com')
+        self.chrome.find_element(*self.PASS_INPUT).send_keys('Pass234@#$')
+        self.chrome.find_element(*self.SIGN_IN_BTN).click()
+        msg = self.chrome.find_element(By.XPATH, '//p[@class="info-account"]').text
+        self.assertIn(msg, 'Welcome to your account. Here you can manage all of your personal information and orders.',
+                      'Not the correct successfully login text')
+
+    def test_valid_email_no_password_error(self):
+        self.chrome.find_element(*self.EMAIL_ADDRESS_REGISTER).send_keys('darkstar_mary@yahoo.com')
+        self.chrome.find_element(*self.SIGN_IN_BTN).click()
+        msg = self.chrome.find_element(By.XPATH, '//li[contains(text(),"Password")]').text
+        self.assertIn(msg, 'Password is required.', 'Not the correct password error')
+
+    def test_failed_login(self):
+        self.chrome.find_element(*self.EMAIL_ADDRESS_REGISTER).send_keys('darkstar_mary@yahoo.com')
+        self.chrome.find_element(*self.PASS_INPUT).send_keys('aaaaaaaaaaa')
+        self.chrome.find_element(*self.SIGN_IN_BTN).click()
+        msg = self.chrome.find_element(By.XPATH, '//li[contains(text(),"failed")]').text
+        self.assertIn(msg, 'Authentication failed.', 'Not the correct login error')
+
     def test_forgot_pass_error_msg(self):
         self.chrome.find_element(*self.FORGOT_PASS).click()
         self.chrome.find_element(*self.RETRIEVE_PASS).click()

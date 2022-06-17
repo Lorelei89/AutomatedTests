@@ -2,6 +2,7 @@ import unittest
 
 import HtmlTestRunner
 
+from Tests.Account import Account
 from Tests.Cart import Cart
 from Tests.ContactUs import ContactUs
 from Tests.SignIn import SignIn
@@ -17,7 +18,7 @@ class TestSuite(unittest.TestCase):
         runner = HtmlTestRunner.HTMLTestRunner(
             combine_reports=True,
             report_title='Contact Us',
-            report_name='Smoke Test Result'
+            report_name='Contact Us Result'
         )
 
         runner.run(smoke_test)
@@ -43,5 +44,17 @@ class TestSuite(unittest.TestCase):
             combine_reports=True,
             report_title='Cart',
             report_name='Cart test results'
+        )
+        runner.run(smoke_test)
+
+    def test_suite_account(self):
+        smoke_test = unittest.TestSuite()
+        smoke_test.addTests([
+            unittest.defaultTestLoader.loadTestsFromTestCase(Account)
+        ])
+        runner = HtmlTestRunner.HTMLTestRunner(
+            combine_reports=True,
+            report_title='Account',
+            report_name='Account test results'
         )
         runner.run(smoke_test)
