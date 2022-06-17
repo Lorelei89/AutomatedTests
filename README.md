@@ -9,6 +9,7 @@
 ⏩ Sections tested:
 * Contact Us 
 * Sign In
+* Cart
 
 ⏬
 **HTML Reports** in _reports_ folder  
