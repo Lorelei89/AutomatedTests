@@ -27,6 +27,9 @@ class SignIn(unittest.TestCase):
     HOME_ICON = (By.XPATH, '//a[@class="home"]')
     HOME_LOGIN_BTN = (By.XPATH, '//a[@class="login"]')
     LOGO = (By.XPATH, '//img[@class="logo img-responsive"]')
+    WOMAN_SECTION = (By.CSS_SELECTOR, '#block_top_menu > ul > li.sfHoverForce > a')
+    SECTION_TITLES = (By.XPATH, '//h1[@class="page-heading product-listing"]//parent::span')
+    DRESSES_SECTION = (By.CSS_SELECTOR, '#block_top_menu > ul > li:nth-child(2) > a')
 
     def setUp(self):
         s = Service(ChromeDriverManager().install())
@@ -99,3 +102,20 @@ class SignIn(unittest.TestCase):
         self.assertEqual(expected, actual, 'Not the correct signin button')
 
     def test_logo_sign_in_functionality(self):
+        self.chrome.find_element(*self.LOGO).click()
+        expected = self.chrome.find_element(*self.HOME_LOGIN_BTN).text
+        actual = 'Sign in'
+        self.assertEqual(expected, actual, 'Not the correct signin button')
+
+    def test_functionality_woman_section(self):
+        self.chrome.find_element(*self.WOMAN_SECTION).click()
+        expected = self.chrome.find_element(*self.SECTION_TITLES).text
+        actual = 'WOMEN'
+        self.assertEqual(expected, actual, 'Not the correct title')
+
+    def test_functionality_dresses_section(self):
+        self.chrome.find_element(*self.DRESSES_SECTION).click()
+        expected = self.chrome.find_element(*self.SECTION_TITLES).text
+        actual = 'DRESSES '
+        self.assertEqual(expected, actual, 'Not the correct title')
+
