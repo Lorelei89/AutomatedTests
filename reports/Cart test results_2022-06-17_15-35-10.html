@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="text-capitalize">Cart</h2>
+                <p class='attribute'><strong>Start Time: </strong>2022-06-17 15:35:10</p>
+                <p class='attribute'><strong>Duration: </strong>97.13 s</p>
+                <p class='attribute'><strong>Summary: </strong>Total: 6, Pass: 5, Error: 1</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10">
+                <table class='table table-hover table-responsive'>
+                    <thead>
+                        <tr>
+                            <th>Tests.Cart.Cart</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_cart_more_btn</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_check_correct_data_selected_cart</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_delete_cart_functionality</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_empty_cart_error</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr class='success'>
+                            <td class="col-xs-10">test_more_quantity_btn</td>
+                            <td class="col-xs-1">
+                                <span class="label label-success" style="display:block;width:40px;">Pass</span>
+                            </td>
+                            <td class="col-xs-1">
+                            </td>
+                        </tr>
+                        <tr class='warning'>
+                            <td class="col-xs-10">test_quantity_increase_btn</td>
+                            <td class="col-xs-1">
+                                <span class="label label-warning" style="display:block;width:40px;">Error</span>
+                            </td>
+                            <td class="col-xs-1">
+                                <button class="btn btn-default btn-xs">View</button>
+                            </td>
+                        </tr>
+                        <tr style="display:none;">
+                            <td class="col-xs-9" colspan="3"><p style="color:maroon;">NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@data-field-qty="qty"]//i[@class="icon-plus"]"}
+  (Session info: chrome=102.0.5005.115)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0068D953+2414931]
+	Ordinal0 [0x0061F5E1+1963489]
+	Ordinal0 [0x0050C6B8+837304]
+	Ordinal0 [0x00539500+1021184]
+	Ordinal0 [0x0053979B+1021851]
+	Ordinal0 [0x00566502+1205506]
+	Ordinal0 [0x005544E4+1131748]
+	Ordinal0 [0x00564812+1198098]
+	Ordinal0 [0x005542B6+1131190]
+	Ordinal0 [0x0052E860+976992]
+	Ordinal0 [0x0052F756+980822]
+	GetHandleVerifier [0x008FCC62+2510274]
+	GetHandleVerifier [0x008EF760+2455744]
+	GetHandleVerifier [0x0071EABA+551962]
+	GetHandleVerifier [0x0071D916+547446]
+	Ordinal0 [0x00625F3B+1990459]
+	Ordinal0 [0x0062A898+2009240]
+	Ordinal0 [0x0062A985+2009477]
+	Ordinal0 [0x00633AD1+2046673]
+	BaseThreadInitThunk [0x7753FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77697A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77697A4E+238]
+</p><p style="color:maroon;">Traceback (most recent call last):
+  File "C:\Users\Maria\PycharmProjects\AutomatedTests\Tests\Cart.py", line 55, in test_quantity_increase_btn
+    self.chrome.find_element(*self.PLUS_BTN).click()
+  File "C:\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1248, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "C:\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 425, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@data-field-qty="qty"]//i[@class="icon-plus"]"}
+  (Session info: chrome=102.0.5005.115)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0068D953+2414931]
+	Ordinal0 [0x0061F5E1+1963489]
+	Ordinal0 [0x0050C6B8+837304]
+	Ordinal0 [0x00539500+1021184]
+	Ordinal0 [0x0053979B+1021851]
+	Ordinal0 [0x00566502+1205506]
+	Ordinal0 [0x005544E4+1131748]
+	Ordinal0 [0x00564812+1198098]
+	Ordinal0 [0x005542B6+1131190]
+	Ordinal0 [0x0052E860+976992]
+	Ordinal0 [0x0052F756+980822]
+	GetHandleVerifier [0x008FCC62+2510274]
+	GetHandleVerifier [0x008EF760+2455744]
+	GetHandleVerifier [0x0071EABA+551962]
+	GetHandleVerifier [0x0071D916+547446]
+	Ordinal0 [0x00625F3B+1990459]
+	Ordinal0 [0x0062A898+2009240]
+	Ordinal0 [0x0062A985+2009477]
+	Ordinal0 [0x00633AD1+2046673]
+	BaseThreadInitThunk [0x7753FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77697A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x77697A4E+238]
+
+
+
+====== WebDriver manager ======
+Could not get version for google-chrome with the command:  powershell "$ErrorActionPreference='silentlycontinue' ; (Get-Item -Path "$env:PROGRAMFILES\Google\Chrome\Application\chrome.exe").VersionInfo.FileVersion ; if (-not $? -or $? -match $error) { (Get-Item -Path "$env:PROGRAMFILES(x86)\Google\Chrome\Application\chrome.exe").VersionInfo.FileVersion } if (-not $? -or $? -match $error) { (Get-Item -Path "$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe").VersionInfo.FileVersion } if (-not $? -or $? -match $error) { reg query "HKCU\SOFTWARE\Google\Chrome\BLBeacon" /v version } if (-not $? -or $? -match $error) { reg query "HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Google Chrome" /v version }"
+Current google-chrome version is UNKNOWN
+Get LATEST chromedriver version for UNKNOWN google-chrome
+Trying to download new driver from https://chromedriver.storage.googleapis.com/102.0.5005.61/chromedriver_win32.zip
+Driver has been saved in cache [C:\Users\Maria\.wdm\drivers\chromedriver\win32\102.0.5005.61]
+</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                Total: 6, Pass: 5, Error: 1 -- Duration: 97.13 s
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('td').on('click', '.btn', function(e){
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                var $this = $(this);
+                var $nextRow = $this.closest('tr').next('tr');
+                $nextRow.slideToggle("fast");
+                $this.text(function(i, text){
+                    if (text === 'View') {
+                        return 'Hide';
+                    } else {
+                        return 'View';
+                    };
+                });
+            });
+        });
+    </script>
+</body>
+</html
