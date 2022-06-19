@@ -7,6 +7,7 @@
 * PyCharm
 
 ⏩ Sections tested:
+* Account
 * Contact Us 
 * Sign In
 * Cart
