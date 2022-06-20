@@ -32,15 +32,18 @@ class Cart(unittest.TestCase):
     def tearDown(self):
         self.chrome.quit()
 
+    def action(self):
+        a = ActionChains(self.chrome)
+        m = self.chrome.find_element(By.LINK_TEXT, "Blouse")
+        a.move_to_element(m).perform()
+
     def test_empty_cart_error(self):
         self.chrome.find_element(*self.CART_BTN).click()
         err_msg = self.chrome.find_element(*self.EMPTY_CART_ERR).text
         self.assertIn(err_msg, 'Your shopping cart is empty.', 'Not the correct empty cart msg error')
 
     def test_delete_cart_functionality(self):
-        a = ActionChains(self.chrome)
-        m = self.chrome.find_element(By.LINK_TEXT, "Blouse")
-        a.move_to_element(m).perform()
+        self.action()
         self.chrome.find_element(*self.BLOUSE).click()
         self.chrome.find_element(*self.PROCEED_CHECKOUT).click()
         self.chrome.find_element(*self.DELETE_ITEM).click()
@@ -48,9 +51,7 @@ class Cart(unittest.TestCase):
         self.assertIn(msg, 'Your shopping cart is empty.', 'Not the correct empty cart msg error')
 
     def test_quantity_increase_btn(self):
-        a = ActionChains(self.chrome)
-        m = self.chrome.find_element(By.LINK_TEXT, "Blouse")
-        a.move_to_element(m).perform()
+        self.action()
         self.chrome.find_element(*self.BLOUSE).click()
         self.chrome.find_element(*self.PROCEED_CHECKOUT).click()
         self.chrome.find_element(*self.CART_QUANTITY).click()
@@ -59,18 +60,14 @@ class Cart(unittest.TestCase):
         self.assertIn(nr, '$56.00', 'Not the correct price')
 
     def test_cart_more_btn(self):
-        a = ActionChains(self.chrome)
-        m = self.chrome.find_element(By.LINK_TEXT, "Blouse")
-        a.move_to_element(m).perform()
+        self.action()
         self.chrome.find_element(*self.BLOUSE_MORE_BTN).click()
         expected = self.chrome.find_element(*self.BLOUSE_TITLE).text
         actual = 'Blouse'
         self.assertEqual(expected, actual, 'Incorrect title match')
 
     def test_more_quantity_btn(self):
-        a = ActionChains(self.chrome)
-        m = self.chrome.find_element(By.LINK_TEXT, "Blouse")
-        a.move_to_element(m).perform()
+        self.action()
         self.chrome.find_element(*self.BLOUSE_MORE_BTN).click()
         self.chrome.find_element(*self.PLUS_BTN).click()
         time.sleep(1)
@@ -81,9 +78,7 @@ class Cart(unittest.TestCase):
         self.assertEqual(expected, actual, 'Incorrect price match')
 
     def test_check_correct_data_selected_cart(self):
-        a = ActionChains(self.chrome)
-        m = self.chrome.find_element(By.LINK_TEXT, "Blouse")
-        a.move_to_element(m).perform()
+        self.action()
         self.chrome.find_element(*self.BLOUSE_MORE_BTN).click()
         self.chrome.find_element(*self.PLUS_BTN).click()
         self.chrome.find_element(By.XPATH, '//option[@value="2"]').click()
